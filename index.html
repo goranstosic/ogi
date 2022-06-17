@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ParticleSlider</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #container {
+        background-color: lime;
+        width: 150px;
+        height: 150px;
+      }
+
+      #hidden-div {
+        visibility: hidden;
+        background-color: salmon;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>Container content</div>
+      <div>
+        <div>
+          <div id="hidden-div">Hidden div content</div>
+        </div>
+      </div>
+
+      <div>More content</div>
+    </div>
+  </body>
+  <script>
+    const el = document.getElementById("container");
+
+    const hiddenDiv = document.getElementById("hidden-div");
+
+    // ✅ Show hidden DIV on hover
+    el.addEventListener("mouseover", function handleMouseOver() {
+      hiddenDiv.style.visibility = "visible";
+    });
+
+    // ✅ (optionally) Hide DIV on mouse out
+    el.addEventListener("mouseout", function handleMouseOut() {
+      // 👇️ if you used visibility property to hide div
+      hiddenDiv.style.visibility = "hidden";
+    });
+  </script>
+</html>
